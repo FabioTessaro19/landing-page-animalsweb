@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>animalsweb — adoção e doação</title>
+  <meta name="description" content="Conectamos pessoas, ONGs e protetores para transformar vidas de animais. Adoção responsável e campanhas de doação." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --orange:#FF7A00;        /* laranja */
+      --blue:#4FC3F7;          /* azulzinho */
+      --ink:#22252A;           /* preto não tão escuro */
+      --bg:#F7F8FA;            /* cinza claro de fundo */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--ink);background:var(--bg)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1120px;margin:0 auto;padding:0 16px}
+    .btn{display:inline-block;padding:14px 22px;border-radius:14px;font-weight:600;border:2px solid transparent;cursor:pointer}
+    .btn-primary{background:var(--orange);color:#fff}
+    .btn-primary:hover{filter:brightness(0.95)}
+    .btn-outline{background:#fff;border-color:var(--blue);color:var(--ink)}
+    .btn-outline:hover{background:rgba(79,195,247,0.1)}
+
+    /* Header fix: fundo sólido + leve sombra para contraste */
+    header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid rgba(0,0,0,.06);box-shadow:0 4px 12px rgba(0,0,0,.04)}
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:36px;height:36px;border-radius:14px;background:var(--orange);color:#fff;display:grid;place-items:center;font-weight:800}
+    .navlinks{display:none;gap:22px;font-size:14px}
+    @media(min-width:768px){.navlinks{display:flex}}
+
+    /* Hero */
+    .hero{padding:64px 0 48px}
+    @media(min-width:1024px){.herogrid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px}}
+    h1{font-size:40px;line-height:1.1;margin:0}
+    @media(min-width:640px){h1{font-size:52px}}
+    .muted{color:rgba(0,0,0,.68)}
+    .hero-card{border-radius:18px;background:#fff;box-shadow:0 12px 28px rgba(0,0,0,.08);overflow:hidden}
+    .mock{aspect-ratio:16/10;background:linear-gradient(135deg, rgba(79,195,247,.3), rgba(255,122,0,.3));display:grid;place-items:center;text-align:center;padding:32px}
+    .kpis{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(0,0,0,.06)}
+    .kpi{padding:18px 8px;text-align:center}
+    .kpi b{font-size:20px}
+    .emailform{display:flex;gap:8px;max-width:520px}
+    .emailform input{flex:1;height:44px;border-radius:12px;border:1px solid rgba(0,0,0,.12);padding:0 14px}
+    .emailform input:focus{outline:2px solid var(--blue)}
+
+    /* Sections */
+    section{padding:72px 0}
+    .cards{display:grid;gap:16px}
+    @media(min-width:768px){.cards{grid-template-columns:repeat(3,1fr)}}
+    .card{background:#fff;border-radius:16px;box-shadow:0 8px 20px rgba(0,0,0,.06);padding:22px}
+    .badge{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;font-weight:700}
+    .badge-blue{background:rgba(79,195,247,.18);color:var(--ink)}
+    .badge-orange{background:rgba(255,122,0,.15);color:var(--orange)}
+
+    /* CTA */
+    .cta{border-radius:18px;box-shadow:0 12px 28px rgba(0,0,0,.08);overflow:hidden;background:#fff}
+    .cta-grid{display:grid}
+    @media(min-width:768px){.cta-grid{grid-template-columns:1fr 1fr}}
+    .cta-art{background:linear-gradient(135deg, rgba(79,195,247,.3), rgba(255,122,0,.3));display:grid;place-items:center;padding:24px}
+    .cta-art img{max-width:520px;border-radius:14px;box-shadow:0 8px 18px rgba(0,0,0,.15);width:100%;height:auto}
+
+    /* Footer */
+    footer{background:var(--ink);color:#fff}
+    .footgrid{display:grid;gap:18px}
+    @media(min-width:768px){.footgrid{grid-template-columns:2fr 1fr 1fr 1.2fr}}
+    .foot a{color:#fff;opacity:.85}
+    .foot a:hover{text-decoration:underline}
+    .copyright{border-top:1px solid rgba(255,255,255,.14);text-align:center;padding:18px 0;color:rgba(255,255,255,.7);font-size:12px}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo">AW</div>
+        <strong>animalsweb</strong>
+      </div>
+      <nav class="navlinks">
+        <a href="#como-funciona">Como funciona</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#quem-usa">Quem usa</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div style="display:flex;gap:8px">
+        <button class="btn" onclick="window.open('https://animalsweb.com.br/login','_blank')">Entrar</button>
+        <button class="btn btn-primary" onclick="window.open('https://animalsweb.com.br/registrar-se','_blank')">Criar conta</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container herogrid">
+      <div>
+        <h1>Conectamos pessoas, ONGs e protetores para <span style="color:var(--orange)">transformar</span> vidas de animais.</h1>
+        <p class="muted" style="margin:18px 0 0;max-width:640px">Na animalsweb você encontra pets para adoção, campanhas de doação e uma comunidade engajada. Tudo em um só lugar, com transparência e segurança.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:26px">
+          <a class="btn btn-primary" href="#recursos">Explorar agora</a>
+          <a class="btn btn-outline" href="#cta">Publicar um pet/campanha</a>
+        </div>
+        <div style="margin-top:24px">
+          <div class="muted" style="font-size:14px;margin-bottom:8px">Receba novidades e campanhas por email</div>
+          <form class="emailform" onsubmit="event.preventDefault(); alert('Assinado com sucesso!');">
+            <input type="email" placeholder="seu@email.com" required />
+            <button class="btn" style="background:var(--blue);color:var(--ink)">Assinar</button>
+          </form>
+        </div>
+      </div>
+      <div>
+        <div class="hero-card">
+          <div class="mock">
+            <div>
+              <div style="font-weight:700;margin-bottom:6px">Encontre seu novo melhor amigo</div>
+              <div class="muted" style="font-size:14px">Substitua por screenshots reais do animalsweb</div>
+            </div>
+          </div>
+          <div class="kpis">
+            <div class="kpi"><b>+1.2k</b><div class="muted" style="font-size:11px;text-transform:uppercase">animais ajudados</div></div>
+            <div class="kpi"><b>+380</b><div class="muted" style="font-size:11px;text-transform:uppercase">adoções finalizadas</div></div>
+            <div class="kpi"><b>+90</b><div class="muted" style="font-size:11px;text-transform:uppercase">ONGs & protetores</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Como funciona -->
+  <section id="como-funciona" style="background:#fff">
+    <div class="container">
+      <h2 style="font-size:32px;margin:0 0 8px">Como funciona</h2>
+      <p class="muted" style="margin:0 0 22px;max-width:720px">Criamos um fluxo simples e transparente para facilitar adoções e doações.</p>
+      <div class="cards">
+        <div class="card"><div class="badge badge-blue">1</div><h3 style="margin:12px 0 6px">Crie sua conta</h3><p class="muted" style="font-size:14px">Leva menos de 1 minuto. É grátis.</p></div>
+        <div class="card"><div class="badge badge-blue">2</div><h3 style="margin:12px 0 6px">Encontre ou publique</h3><p class="muted" style="font-size:14px">Busque por pets/campanhas ou publique um novo resgate.</p></div>
+        <div class="card"><div class="badge badge-blue">3</div><h3 style="margin:12px 0 6px">Conecte & apoie</h3><p class="muted" style="font-size:14px">Converse com responsáveis, agende visitas e doe com segurança.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recursos -->
+  <section id="recursos">
+    <div class="container">
+      <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:18px">
+        <div>
+          <h2 style="font-size:32px;margin:0 0 6px">Recursos que importam</h2>
+          <p class="muted">Feitos para acelerar adoções e dar suporte a quem cuida.</p>
+        </div>
+        <a href="#recursos" style="color:var(--orange);font-size:14px">Ver tudo</a>
+      </div>
+      <div class="cards">
+        <div class="card"><div class="badge badge-orange">🐾</div><h3 style="margin:12px 0 6px">Adoção responsável</h3><p class="muted" style="font-size:14px">Filtros por idade, porte e localização.</p></div>
+        <div class="card"><div class="badge badge-orange">❤️</div><h3 style="margin:12px 0 6px">Campanhas de doação</h3><p class="muted" style="font-size:14px">Apoie com rações, itens de higiene e veterinário.</p></div>
+        <div class="card"><div class="badge badge-orange">👥</div><h3 style="margin:12px 0 6px">Comunidade</h3><p class="muted" style="font-size:14px">Acompanhe resgates e compartilhe vitórias.</p></div>
+        <div class="card"><div class="badge badge-orange">📍</div><h3 style="margin:12px 0 6px">Perto de você</h3><p class="muted" style="font-size:14px">Descubra ações e parceiros na sua cidade.</p></div>
+        <div class="card"><div class="badge badge-orange">🛡️</div><h3 style="margin:12px 0 6px">Verificação</h3><p class="muted" style="font-size:14px">Mais segurança para todos os perfis.</p></div>
+        <div class="card"><div class="badge badge-orange">🚀</div><h3 style="margin:12px 0 6px">Divulgação fácil</h3><p class="muted" style="font-size:14px">Publique animais e campanhas em minutos.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Prova social -->
+  <section id="quem-usa" style="background:#fff">
+    <div class="container">
+      <h2 style="font-size:32px;margin:0 0 18px">Histórias reais</h2>
+      <div class="cards">
+        <div class="card"><p class="muted" style="font-style:italic">“Em poucos dias encontramos um lar perfeito para a Mel.”</p><div class="muted" style="font-size:12px;margin-top:8px">Carla • Protetora independente</div></div>
+        <div class="card"><p class="muted" style="font-style:italic">“Publicar a campanha foi simples e transparente.”</p><div class="muted" style="font-size:12px;margin-top:8px">ONG Patas Felizes</div></div>
+        <div class="card"><p class="muted" style="font-style:italic">“Filtros ajudaram a encontrar um cão ideal para apartamento.”</p><div class="muted" style="font-size:12px;margin-top:8px">Rafael • Adotante</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="cta">
+    <div class="container">
+      <div class="cta">
+        <div class="cta-grid">
+          <div style="padding:26px 22px 32px 22px">
+            <h3 style="font-size:26px;margin:0">Pronto para ajudar?</h3>
+            <p class="muted" style="margin:8px 0 0">Participe agora da comunidade animalsweb e faça parte da mudança.</p>
+            <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+              <button class="btn btn-primary" onclick="window.open('https://animalsweb.com.br/registrar-se','_blank')">Criar conta grátis</button>
+              <a class="btn btn-outline" href="#recursos">Ver campanhas ativas</a>
+            </div>
+            <ul style="margin:14px 0 0;padding-left:18px;color:rgba(0,0,0,.7);font-size:14px;line-height:1.7">
+              <li>Sem taxas para adotar</li>
+              <li>Publicação rápida de pets</li>
+              <li>Suporte para ONGs</li>
+            </ul>
+          </div>
+          <div class="cta-art">
+            <img src="https://picsum.photos/seed/animalsweb/640/420" alt="Mock do aplicativo"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:#fff">
+    <div class="container">
+      <h2 style="font-size:32px;margin:0 0 14px">Perguntas frequentes</h2>
+      <div class="cards">
+        <div class="card"><b>A plataforma é gratuita?</b><p class="muted" style="margin:8px 0 0;font-size:14px">Sim. Criar conta, buscar e publicar animais é gratuito. Campanhas podem usar meios de pagamento externos.</p></div>
+        <div class="card"><b>Como as ONGs são verificadas?</b><p class="muted" style="margin:8px 0 0;font-size:14px">Solicitamos documentos e análise de atividades para conceder o selo.</p></div>
+        <div class="card"><b>Posso doar itens físicos?</b><p class="muted" style="margin:8px 0 0;font-size:14px">Sim, combine a entrega com ONGs e protetores próximos.</p></div>
+        <div class="card"><b>É possível filtrar por porte/idade?</b><p class="muted" style="margin:8px 0 0;font-size:14px">Sim. Oferecemos filtros de porte, idade, espécie e cidade.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container" style="padding:42px 16px">
+      <div class="footgrid">
+        <div>
+          <div class="brand"><div class="logo">AW</div><strong>animalsweb</strong></div>
+          <p style="margin:10px 0 0;opacity:.8;font-size:14px">Facilitando adoções e doações com transparência.</p>
+        </div>
+        <div class="foot"><div style="font-weight:600;margin-bottom:8px">Plataforma</div>
+          <div style="display:grid;gap:8px;font-size:14px">
+            <a href="#recursos">Recursos</a>
+            <a href="#como-funciona">Como funciona</a>
+            <a href="#faq">FAQ</a>
+          </div>
+        </div>
+        <div class="foot"><div style="font-weight:600;margin-bottom:8px">Legal</div>
+          <div style="display:grid;gap:8px;font-size:14px">
+            <a href="#">Termos de uso</a>
+            <a href="#">Privacidade</a>
+          </div>
+        </div>
+        <div class="foot"><div style="font-weight:600;margin-bottom:8px">Contato</div>
+          <div style="display:grid;gap:8px;font-size:14px">
+            <a href="mailto:contato@animalsweb.com.br">contato@animalsweb.com.br</a>
+            <span>Caxias do Sul • RS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">© <span id="year"></span> animalsweb. Todos os direitos reservados.</div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
